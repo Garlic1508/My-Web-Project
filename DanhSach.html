@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RazerVN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Kiểu dáng cơ bản */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #1a202c, #111827);
+            color: #e2e8f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex-grow: 1;
+        }
+        .razer-green {
+            color: #4ade80;
+        }
+        .bg-razer-green {
+            background-color: #4ade80;
+        }
+        .border-razer-green {
+            border-color: #4ade80;
+        }
+        /* Kiểu dáng thẻ sản phẩm */
+        .product-card {
+             @apply bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out flex flex-col border border-gray-700 hover:shadow-xl hover:border-green-500/50 hover:scale-[1.03];
+        }
+        .product-card img {
+             @apply w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105;
+        }
+        .product-card-content {
+             @apply p-5 flex-grow flex flex-col justify-between;
+        }
+         .product-card-title {
+             @apply text-lg font-semibold mb-2 razer-green;
+         }
+         .product-card-desc {
+              @apply text-gray-400 text-sm mb-4 leading-relaxed;
+         }
+         .product-card-price {
+              @apply text-xl font-bold mb-4 text-white;
+         }
+         .product-card-button {
+              @apply text-sm bg-green-600 text-white text-center py-2.5 px-4 rounded-md hover:bg-green-700 transition-all duration-200 w-full mt-auto font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+         }
+         /* Header và Footer */
+         header {
+            @apply bg-gray-800/80 backdrop-blur-sm shadow-md sticky top-0 z-50 border-b border-gray-700/50;
+         }
+         footer {
+            @apply bg-gray-900 border-t border-gray-700/50 mt-20;
+         }
+         /* Kiểu dáng Tab */
+        .tab-button {
+            @apply px-5 py-3 font-medium text-base rounded-t-lg transition duration-200 ease-in-out border-b-2 border-transparent text-gray-400 hover:text-green-400 hover:border-green-400/70 focus:outline-none;
+        }
+        .tab-button.active {
+            @apply text-green-400 border-green-400 font-semibold;
+        }
+        .tab-content {
+            display: none; /* Ẩn nội dung tab mặc định */
+            @apply pt-8; /* Thêm khoảng cách trên cho nội dung tab */
+        }
+        .tab-content.active {
+            display: block; /* Hiển thị nội dung tab đang active */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <header>
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="../index.html" class="text-2xl font-bold razer-green hover:opacity-80 transition-opacity">RAZER<span class="text-white">VN</span></a>
+                 
+            </div>
+            <a href="../index.html" class="text-sm sm:text-base text-gray-300 transition duration-200 flex items-center group">
+               Trang Chủ
+            </a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-16">
+
+        <div class="border-b border-gray-700 mb-6">
+            <nav class="-mb-px flex justify-center space-x-4 sm:space-x-8" aria-label="Tabs">
+                <button data-tab-target="#mouse-tab" class="tab-button active">Chuột Gaming</button>
+                <button data-tab-target="#keyboard-tab" class="tab-button">Bàn Phím Gaming</button>
+                <button data-tab-target="#headset-tab" class="tab-button">Tai Nghe Gaming</button>
+            </nav>
+        </div>
+
+        <div>
+            <div id="mouse-tab" class="tab-content active">
+                <section id="mouse-section">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/H9AN_7f5PgTQH6tJoftY25TYG-s=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh3a%2Fhb0%2F9529652609054%2Fbasilisk-v3-x-hyperspeed-2-500x500.png" alt="[Hình ảnh của Razer Basilisk V3 X HyperSpeed]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Basilisk V3 X HyperSpeed</h3>
+                                    <p class="product-card-desc">Chuột gaming không dây, tùy biến cao với 9 nút lập trình.</p>
+                                    <p class="product-card-price">70$</p>
+                                </div>
+                                <a href="Chuot/Razer Basilisk V3 X HyperSpeed.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/ipD_K8GbxeSNTglpmMuGlLX5DUQ=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh25%2Fh99%2F9877650112542%2Fcobra-minecraft-500x500.png" alt="[Hình ảnh của Razer Cobra]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Cobra</h3>
+                                    <p class="product-card-desc">Chuột gaming có dây siêu nhẹ, thiết kế đối xứng, Chroma RGB.</p>
+                                    <p class="product-card-price">60$</p>
+                                </div>
+                                <a href="Chuot/Razer Cobra.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/y265A8on-spu30uzfYMFCzGGBpU=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb2%2Fhb9%2F9529652379678%2Fnaga-v2-pro-2-500x500.png" alt="[Hình ảnh của Razer Naga V2 Pro]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Naga V2 Pro</h3>
+                                    <p class="product-card-desc">Chuột MMO không dây tối ưu với 3 tấm hông thay đổi được.</p>
+                                    <p class="product-card-price">180$</p>
+                                </div>
+                                <a href="Chuot/Razer Naga V2 Pro.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                         <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/QuWXycAZ9HfgKP_6waksItWG5Vc=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4a%2Fh79%2F9899953684510%2Fpro-click-v2-vertical-black-500x500.png" alt="[Hình ảnh của Razer Pro Click V2 Vertical]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Pro Click V2 Vertical</h3>
+                                    <p class="product-card-desc">Chuột công thái học dọc, giảm căng thẳng cổ tay.</p>
+                                    <p class="product-card-price">120$</p>
+                                </div>
+                                <a href="Chuot/Razer Pro Click V2 Vertical.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                         <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/tqhNM88GhdyLh1I_hH0y9CHkzLs=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha3%2Fh76%2F9899953717278%2Fpro-click-v2-black-500x500.png" alt="[Hình ảnh của Razer Pro Click V2]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Pro Click V2</h3>
+                                    <p class="product-card-desc">Chuột không dây hiệu suất cao dành cho công việc.</p>
+                                    <p class="product-card-price">100$</p>
+                                </div>
+                                <a href="Chuot/Razer Pro Click V2.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                         <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/5laj2rf23EVxNK2WGaCtV8YwPJ4=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhbc%2Fhd3%2F9874162941982%2Fviper-v3-pro-faker-500x500.png" alt="[Hình ảnh của Razer Viper V3 Pro Faker Edition]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Viper V3 Pro Faker Edition</h3>
+                                    <p class="product-card-desc">Chuột esports siêu nhẹ, phiên bản đặc biệt Faker.</p>
+                                    <p class="product-card-price">180$</p>
+                                </div>
+                                <a href="Chuot/Razer Viper V3 Pro Faker.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="keyboard-tab" class="tab-content">
+                <section id="keyboard-section">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/rhunECcJpSrFFKP37kE0I0E53o0=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4e%2Fh60%2F9533910286366%2Fblackwidow-v3-evisu-4-500x500.png" alt="[Hình ảnh của Razer BlackWidow V3]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer BlackWidow V3</h3>
+                                    <p class="product-card-desc">Bàn phím cơ gaming huyền thoại với switch Razer Green.</p>
+                                    <p class="product-card-price">200$</p>
+                                </div>
+                                <a href="banphim/Razer BlackWidow V3.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/aZsIwMiZ3I2YR3LQZnHF0Otjiz0=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh48%2Fh9f%2F9533909991454%2Fdeathstalker-v2-pro-4-500x500.png" alt="[Hình ảnh của Razer DeathStalker V2 Pro]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer DeathStalker V2 Pro</h3>
+                                    <p class="product-card-desc">Bàn phím quang học low-profile không dây, siêu mỏng.</p>
+                                    <p class="product-card-price">250$</p>
+                                </div>
+                                <a href="banphim/Razer DeathStalker V2 Pro.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/0pAqWmXSHnoHWfQ0ZmTb5cWo_To=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh95%2Fhef%2F9886291591198%2Fhuntsman-v3-pro-mini-white-2-500x500.png" alt="[Hình ảnh của Razer Huntsman Mini]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Huntsman Mini</h3>
+                                    <p class="product-card-desc">Bàn phím cơ 60% nhỏ gọn, switch quang học Razer.</p>
+                                    <p class="product-card-price">180$</p>
+                                </div>
+                                <a href="banphim/Razer Huntsman Mini.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/QtCQ88UJnXblNam9ewR-piNQMTQ=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf5%2Fh0b%2F9178922123294%2Fhuntsman-te-se-500x500.png" alt="[Hình ảnh của Razer Huntsman Tournament Edition]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Huntsman Tournament</h3>
+                                    <p class="product-card-desc">Bàn phím quang học TKL (Tenkeyless) cho esports.</p>
+                                    <p class="product-card-price">130$</p>
+                                </div>
+                                <a href="banphim/Razer Huntsman Tournament.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/9d5unAHIFUGqTOvN8t3eTCEiaLY=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb8%2Fh66%2F9705254125598%2Fhuntsman-v3-pro-2-500x500.png" alt="[Hình ảnh của Razer Huntsman V3 Pro]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Huntsman V3 Pro</h3>
+                                    <p class="product-card-desc">Bàn phím quang học analog thế hệ mới, tùy chỉnh điểm kích hoạt.</p>
+                                    <p class="product-card-price">250$</p>
+                                </div>
+                                <a href="banphim/Razer Huntsman V3 Pro.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/Mww6WQAgviLRfjJ07EG_VKaqOQ0=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8d%2Fhcb%2F9796329373726%2Fornata-v3-tenkeyless-hello-kitty-500x500.png" alt="[Hình ảnh của Razer Ornata V3 Tenkeyless]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Ornata V3 Tenkeyless</h3>
+                                    <p class="product-card-desc">Bàn phím Mecha-Membrane TKL, trải nghiệm gõ độc đáo.</p>
+                                    <p class="product-card-price">120$</p>
+                                </div>
+                                <a href="banphim/Razer Ornata V3 Tenkeyless.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="headset-tab" class="tab-content">
+                <section id="headset-section">
+                   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/nV5j9hdJovSJL_Ek_qMU2s6Yi4g=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe8%2Fhfc%2F9522060623902%2Fbarracuda-pro-3-500x500.png" alt="[Hình ảnh của Razer Barracuda Pro]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Barracuda Pro</h3>
+                                    <p class="product-card-desc">Tai nghe không dây Hybrid ANC, âm thanh THX chất lượng cao.</p>
+                                    <p class="product-card-price">250$</p>
+                                </div>
+                                <a href="tainghe/Razer Barracuda Pro.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/p1AXf57_GsCLCSqVyIzBRDLHudY=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8e%2Fh29%2F9833324937246%2Fbarracuda-x-chroma-black-500x500.png" alt="[Hình ảnh của Razer Barracuda X Chroma]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Barracuda X Chroma</h3>
+                                    <p class="product-card-desc">Tai nghe không dây đa nền tảng linh hoạt, có Chroma RGB.</p>
+                                    <p class="product-card-price">130$</p>
+                                </div>
+                                <a href="tainghe/Razer Barracuda X Chroma.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/KH8eeot286Hc26Dq9EY5VE1E9TU=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh46%2Fh86%2F9807445753886%2F240820-BlackShark-V2-Pro-500x500.png" alt="[Hình ảnh của Razer BlackShark V2 Pro]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer BlackShark V2 Pro</h3>
+                                    <p class="product-card-desc">Tai nghe esports không dây hàng đầu, micro siêu rõ.</p>
+                                    <p class="product-card-price">200$</p>
+                                </div>
+                                <a href="tainghe/Razer BlackShark V2 Pro.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/5Hn2os2ibXIhfMdTFsYG5YffBPQ=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc3%2Fh7a%2F9399589797918%2F2-blackshark-v2-x-white-500x500.png" alt="[Hình ảnh của Razer BlackShark V2 X - White]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer BlackShark V2 X - White</h3>
+                                    <p class="product-card-desc">Tai nghe esports cơ bản, hiệu năng tốt, màu trắng thanh lịch.</p>
+                                    <p class="product-card-price">60$</p>
+                                </div>
+                                <a href="tainghe/Razer BlackShark V2 X - White.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/bPe8-n84Rvj9fyzzRNNpdxX651w=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc3%2Fh20%2F9788415246366%2Fkraken-v3-x-fortnite-500x500.png" alt="[Hình ảnh của Razer Kraken V3 X - Fortnite Edition]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Kraken V3 X - Fortnite Edition</h3>
+                                    <p class="product-card-desc">Tai nghe gaming siêu nhẹ, phiên bản đặc biệt Fortnite.</p>
+                                    <p class="product-card-price">100$</p>
+                                </div>
+                                <a href="tainghe/Razer Kraken V3 X - Fortnite Edition.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        <div class="product-card group">
+                            <img src="https://assets3.razerzone.com/a4FUGrKoKcEI1ybUGqVAaIo3cEI=/300x300/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe4%2Fh1d%2F9821452468254%2Fkraken-v4-pro-2-500x500.png" alt="[Hình ảnh của Razer Kraken V4 Pro]" onerror="this.onerror=null; this.src='https://placehold.co/400x300/2d3748/e2e8f0?text=Image+Not+Found'">
+                            <div class="product-card-content">
+                                <div>
+                                    <h3 class="product-card-title">Razer Kraken V4 Pro</h3>
+                                    <p class="product-card-desc">Tai nghe gaming với công nghệ Razer HyperSense haptics thông minh.</p>
+                                    <p class="product-card-price">400$</p>
+                                </div>
+                                <a href="tainghe/Razer Kraken V4 Pro.html" class="product-card-button">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container mx-auto px-6 py-8 text-center text-sm text-gray-500">
+             &copy; 2025 Bản quyền thuộc về Phúc Bảo Quang Khải Tuấn Kiệt.
+        </div>
+    </footer>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetSelector = tab.dataset.tabTarget;
+                // Ensure the target selector is valid before querying
+                if (targetSelector) {
+                    const target = document.querySelector(targetSelector);
+
+                    // Deactivate all tabs and content panels
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(tc => tc.classList.remove('active'));
+
+                    // Activate the clicked tab and its corresponding content panel
+                    tab.classList.add('active');
+                    if (target) { // Check if target element exists
+                       target.classList.add('active');
+                    } else {
+                        console.error(`Tab target not found: ${targetSelector}`);
+                    }
+                } else {
+                     console.error('Tab button missing data-tab-target attribute:', tab);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
